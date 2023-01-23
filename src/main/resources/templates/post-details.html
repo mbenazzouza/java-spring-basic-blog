@@ -24,8 +24,8 @@
         <div class="row py-3">
             <div class="col-sm-12 post-heading">
                 <h1 class="post-title" th:text="${post.getTitle()}"></h1>
-                <h3 class="post-subtitle">Author</h3>
-                <h3 class="post-subtitle">Date</h3>
+                <h3 class="post-subtitle" th:text="${post.getAuthor()}"></h3>
+                <h3 class="post-subtitle" th:text="${post.getDateStr()}"></h3>
             </div>
         </div>
 
@@ -38,7 +38,7 @@
                     <div class="card-title">About the Author</div>
                     <img class="card-img-top"  src="https://randomuser.me/api/portraits/lego/9.jpg" alt="${post.getAuthor()}">
                     <div class="card-body py-4">
-                        <p class="card-author-bio">Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+                        <p class="card-author-bio" th:utext="${post.getBody()}"></p>
                         <a href="#" class=""><div class="card-author-link">Read More</div></a>
                     </div>
                 </div>
